@@ -58,3 +58,16 @@ body {
     margin-left: 15px;
     list-style-type: none;
 }
+
+.search > *{
+    display: inline-block;
+    height: 35px;
+}
+
+.search .textfield {
+    min-width: 70%;
+}
+
+.search .button {
+    min-width: 25%;
+}
