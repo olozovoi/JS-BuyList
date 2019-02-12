@@ -112,7 +112,36 @@ body {
     color: white;
 }
 
-.search > *{
+.search {
+    display: flex;
+    flex-direction: row;
+    height: 35px;
+}
+
+.search .textfield {
+    width: 85%;
+    font-size: 20px;
+}
+
+.search .button {
+    width: 15%;
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: #D1BCD3;
+    background-color: #4c51b9;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.search .button:hover {
+    cursor: pointer;
+    background-color: #303373;
+}
+
+/*.search > *{
     display: inline-block;
     height: 35px;
 }
@@ -123,7 +152,7 @@ body {
 
 .search .button {
     min-width: 28%;
-}
+}*/
 
 .left .list {
     display: flex;
@@ -199,6 +228,15 @@ body {
 }
 
 .list .prod button#bought {
+    background-color: #D1BCD3;
+    padding: 0 10px;
+}
+
+.list .prod div.bought {
+    text-decoration-line: line-through;
+}
+
+.list .prod button#unbought {
     background-color: #D1BCD3;
     padding: 0 10px;
 }
