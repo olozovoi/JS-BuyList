@@ -13,7 +13,7 @@ body {
 .container {
     max-width: 800px;
     margin: auto;
-
+    margin-top: 5%;
 }
 
 .main {
@@ -27,11 +27,12 @@ body {
 
 .main > * {
     margin: 5px;
+    cursor: default;
 }
 
-.main.right > hr {
+.boldhr {
     margin: 0;
-    max-width: 300px;
+    min-width: 100%;
     background-color: #303373;
     height: 2px;
     border-width: 0px;
@@ -46,7 +47,14 @@ body {
 .main.left {
     max-width: 500px;
     height: 100%;
-    padding: 5px;
+}
+
+.main.left > * {
+    margin: 3px;
+}
+
+.main.left > .boldhr {
+    margin: 0;
 }
 
 .right {
@@ -58,28 +66,50 @@ body {
     margin-left: 10px;
 }
 
-.main.right .list {
+.list {
     margin-top: 5px;
     margin-left: 15px;
     padding: 5px;
 }
 
-.main.right .list .elem {
-    display: inline-block;
+.list .elem {
+    display: inline-flex;
+    align-items: baseline;
     border-radius: 3px;
     margin: 3px 0px;
-    padding: 3px 5px;
-    -webkit-box-shadow: 3px 3px 5px 0px rgba(156,156,156,1);
-    -moz-box-shadow: 3px 3px 5px 0px rgba(156,156,156,1);
-    box-shadow: 3px 3px 5px 0px rgba(156,156,156,1);
+    padding: 5px;
+    border: 1px solid #303373;
+    font-size: 12px;
 }
 
-.main.right .list .elem #circle  {
-    display: inline-block;
-    width: 19px;
+.list .bought span {
+    text-decoration-line: line-through;
+}
+
+.list .elem:hover {
+    -webkit-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.75);
+    box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.75);
+    cursor: pointer;
+}
+
+.circle {
+    margin-left: 3px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     text-align: center;
-    border-radius: 100px;
+    
+    width: 1.4vw;
+    height: 1.4vw;
     background-color: orange;
+    border-radius: 100px;
+    padding: 0.3vw;
+    font-size: 1vw;
+    font-weight: 500;
+    color: white;
 }
 
 .search > *{
@@ -93,4 +123,93 @@ body {
 
 .search .button {
     min-width: 28%;
+}
+
+.left .list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.list .prod {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid grey;
+}
+
+.list .prod .col {
+    width: 33%;
+    display: flex;
+    flex-direction: row;
+    padding: 3px;
+}
+
+.list .prod .col1 {
+    display: block;
+    overflow-wrap: break-word;
+    width: 33%;
+}
+
+.list .prod .col2 {
+    justify-content: center;
+}
+
+.list .prod .col2 button {
+    margin: 0 3px;
+    width: 25px;
+    height: 25px;
+}
+
+.list .prod .col2 div {
+    padding: 3px;
+    height: 19px;
+    width: 30px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: lightgrey;
+}
+
+.list .prod .col3 {
+    justify-content: right;
+}
+
+.list .prod button {
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.list .prod button:hover {
+    cursor: pointer;
+    -webkit-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.75);
+    box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.75);
+}
+
+.list .prod button#minus {
+    background-color: red;
+}
+
+.list .prod button#plus {
+    background-color: green;
+}
+
+.list .prod button#bought {
+    background-color: #D1BCD3;
+    padding: 0 10px;
+}
+
+.list .prod button#cross {
+    margin-left: 5px;
+    width: 25px;
+    height: 25px;
+    background-color: red;
+}
+
+.list .prod button#cross::after {
+    content: '\00d7';
 }

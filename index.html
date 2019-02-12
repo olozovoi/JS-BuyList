@@ -14,26 +14,27 @@
 	    <h4>Items left</h4><hr>
         <div class="list">
             <div class="elem">
-                <span>Test</span>
-                <div id="circle">3</div>
+                <span>Сир</span>
+                <div class="circle">101</div>
             </div>
             <div class="elem">
-                <span>Test</span>
-                <div id="circle">3</div>
+                <span>Помідор</span>
+                <div class="circle">3</div>
             </div>
             <div class="elem">
-                <span>Test</span>
-                <div id="circle">3</div>
-            </div>
-            <div class="elem">
-                <span>Test</span>
-                <div id="circle">3</div>
+                <span>Огірок</span>
+                <div class="circle">1</div>
             </div>
         </div>
-      </div><hr>
+      </div><hr class="boldhr">
       <div>
 	    <h4>Already bought</h4><hr>
-	
+        <div class="list">
+            <div class="elem bought">
+                <span>Test</span>
+                <div class="circle out">3</div>
+            </div>
+        </div>
       </div>
     </div>
 
@@ -41,6 +42,53 @@
       <div class="search">
 	    <input class="button right" type="button" value="Buy"/>
 	    <input class="textfield left" type="text" />
+      </div><hr class="boldhr">
+      <div class="list">
+            <div class="prod">
+                <div class="col col1">Cир</div>
+                <div class="col col2">
+                    <button id="minus">-</button>
+                    <div>101</div>
+                    <button id="plus">+</button>
+                </div>
+                <div class="col col3">
+                    <button id="bought">Куплено</button>
+                    <button id="cross"></button>
+                </div>
+            </div>
+            <div class="prod">
+                <div class="col col1">Помідор</div>
+                <div class="col col2">
+                    <button id="minus">-</button>
+                    <div>3</div>
+                    <button id="plus">+</button>
+                </div>
+                <div class="col col3">
+                    <button id="bought">Куплено</button>
+                    <button id="cross"></button>
+                </div>
+            </div>
+            <div class="prod">
+                <div class="col col1">Огірок</div>
+                <div class="col col2">
+                    <button id="minus">-</button>
+                    <div>1</div>
+                    <button id="plus">+</button>
+                </div>
+                <div class="col col3">
+                    <button id="bought">Куплено</button>
+                    <button id="cross"></button>
+                </div>
+            </div>
+            <div class="prod">
+                <div class="col col1">Test</div>
+                <div class="col col2">
+                    <div>1</div>
+                </div>
+                <div class="col col3">
+                    <button id="bought">Не куплено</button>
+                </div>
+            </div>
       </div>
     </div>
   </div>
