@@ -7,22 +7,23 @@
 body {
     background-color: #D1BCD3;
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 40px;
 }
 
 .container {
     max-width: 800px;
     margin: auto;
-    margin-top: 5%;
+    display: flex;
+    flex-flow: row wrap;
 }
 
 .main {
     background-color: #FFFCE4;
     border: 1px solid #682C6C;
     border-radius: 5px;
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 5px 0 rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0 rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0 rgba(0,0,0,0.75);
 }
 
 .main > * {
@@ -30,40 +31,37 @@ body {
     cursor: default;
 }
 
-.boldhr {
+.bold-hr {
     margin: 0;
     min-width: 100%;
     background-color: #303373;
     height: 2px;
-    border-width: 0px;
+    border-width: 0;
 }
 
 .main.right > div > hr {
     background-color: grey;
     height: 1px;
-    border-width: 0px;
+    border-width: 0;
 }
 
 .main.left {
-    max-width: 500px;
     height: 100%;
+    flex-grow: 20;
+    margin: 10px;
 }
 
 .main.left > * {
     margin: 3px;
 }
 
-.main.left > .boldhr {
+.main.left > .bold-hr {
     margin: 0;
 }
 
-.right {
-    float: right;
-}
-
 .main.right {
-    width: 250px;
-    margin-left: 10px;
+    margin: 10px;
+    flex-grow: 1;
 }
 
 .list {
@@ -76,7 +74,7 @@ body {
     display: inline-flex;
     align-items: baseline;
     border-radius: 3px;
-    margin: 3px 0px;
+    margin: 3px 0;
     padding: 5px;
     border: 1px solid #303373;
     font-size: 12px;
@@ -118,7 +116,7 @@ body {
     height: 35px;
 }
 
-.search .textfield {
+.search .text-field {
     width: 85%;
     font-size: 20px;
 }
@@ -140,19 +138,6 @@ body {
     cursor: pointer;
     background-color: #303373;
 }
-
-/*.search > *{
-    display: inline-block;
-    height: 35px;
-}
-
-.search .textfield {
-    min-width: 70%;
-}
-
-.search .button {
-    min-width: 28%;
-}*/
 
 .left .list {
     display: flex;
@@ -199,7 +184,7 @@ body {
 }
 
 .list .prod .col3 {
-    justify-content: right;
+    justify-content: flex-end;
 }
 
 .list .prod button {
@@ -219,35 +204,96 @@ body {
     box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.75);
 }
 
-.list .prod button#minus {
-    background-color: red;
-}
-
-.list .prod button#plus {
-    background-color: green;
-}
-
-.list .prod button#bought {
+.list .prod button.bought, .list .prod button.not-bought {
     background-color: #D1BCD3;
     padding: 0 10px;
+}
+
+.list .prod button.minus {
+    background-color: red;
+    padding: 0;
+}
+
+.list .prod button.plus {
+    background-color: green;
+    padding: 0;
+}
+
+.list .prod button.cross {
+    margin-left: 5px;
+    width: 25px;
+    height: 25px;
+    background-color: red;
+    padding: 0;
 }
 
 .list .prod div.bought {
     text-decoration-line: line-through;
 }
 
-.list .prod button#unbought {
-    background-color: #D1BCD3;
-    padding: 0 10px;
+.badge {
+    position:fixed;
+    bottom: -40px;
+    left: 10px;
+    padding: 10px;
+    background: purple;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: white;
+    transition: all 1s ease;
 }
 
-.list .prod button#cross {
-    margin-left: 5px;
-    width: 25px;
-    height: 25px;
-    background-color: red;
+.badge:hover {
+    bottom: 0;
+    background-color: black;
 }
 
-.list .prod button#cross::after {
-    content: '\00d7';
+@media print {
+    .badge {
+        color: black;
+        background-color: white;
+        border: 1px solid purple;
+        bottom: 0;
+    }
+
+    .badge:hover {
+        background-color: white;
+    }
+
+    .badge h3 {
+        display: none;
+    }
+}
+
+.badge p {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.tooltip {
+    position: relative;
+}
+
+.tooltip::after {
+    position: absolute;
+    content: attr(data-tooltip);
+    background-color: #682C6C;
+    border-radius: 3px;
+    padding: 3px;
+    font-size: 0;
+    white-space: nowrap;
+    transition: all 0.5s linear 0.3s;
+    color: white;
+    bottom: 0;
+    opacity: 0;
+    transform: scaleX(0);
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.tooltip:hover::after {
+    bottom: 110%;
+    opacity: 1;
+    font-size: 12px;
+    transform: scaleX(1);
 }

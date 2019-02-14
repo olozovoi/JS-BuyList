@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html>
-<head lang="uk">
+<html lang="uk">
+<head>
     <meta charset="UTF-8">
     <title>My Page</title>
 
@@ -9,75 +9,46 @@
 </head>
 <body>
   <div class="container">
-    <div class="main right">
-      <div>
-	    <h4>Залишилося</h4><hr>
-        <div class="list">
-            <div class="elem">
-                <span>Сир</span>
-                <div class="circle">101</div>
-            </div>
-            <div class="elem">
-                <span>Помідор</span>
-                <div class="circle">3</div>
-            </div>
-            <div class="elem">
-                <span>Огірок</span>
-                <div class="circle">1</div>
-            </div>
-        </div>
-      </div><hr class="boldhr">
-      <div>
-	    <h4>Куплено</h4><hr>
-        <div class="list">
-            <div class="elem bought">
-                <span>Test</span>
-                <div class="circle out">3</div>
-            </div>
-        </div>
-      </div>
-    </div>
-
     <div class="main left">
       <div class="search">
-	    <input class="textfield" type="text" />
-        <button class="button">Купити</button>
-      </div><hr class="boldhr">
+          <input class="text-field" type="text" placeholder="Назва товару"/>
+          <button class="button tooltip" data-tooltip="Додати продукт до кошика">Купити</button>
+      </div><hr class="bold-hr">
       <div class="list">
             <div class="prod">
                 <div class="col col1">Cир</div>
                 <div class="col col2">
-                    <button id="minus">-</button>
+                    <button class="minus tooltip not-bought" data-tooltip="Зменшити кількість товару">-</button>
                     <div>101</div>
-                    <button id="plus">+</button>
+                    <button class="plus tooltip not-bought" data-tooltip="Збільшити кількість товару">+</button>
                 </div>
                 <div class="col col3">
-                    <button id="bought">Куплено</button>
-                    <button id="cross"></button>
+                    <button class="tooltip not-bought" data-tooltip="Додати до списку купленого">Куплено</button>
+                    <button class="tooltip cross not-bought" data-tooltip="Видалити з кошику">&#x00d7;</button>
                 </div>
             </div>
             <div class="prod">
                 <div class="col col1">Помідор</div>
                 <div class="col col2">
-                    <button id="minus">-</button>
+                    <button class="minus tooltip not-bought" data-tooltip="Зменшити кількість товару">-</button>
                     <div>3</div>
-                    <button id="plus">+</button>
+                    <button class="plus tooltip not-bought" data-tooltip="Збільшити кількість товару">+</button>
                 </div>
                 <div class="col col3">
-                    <button id="bought">Куплено</button>
-                    <button id="cross"></button>
+                    <button class="tooltip not-bought" data-tooltip="Додати до списку купленого">Куплено</button>
+                    <button class="tooltip cross not-bought" data-tooltip="Видалити з кошику">&#x00d7;</button>
                 </div>
             </div>
             <div class="prod">
                 <div class="col col1">Огірок</div>
                 <div class="col col2">
-                    <button id="minus">-</button>
+                    <button class="minus tooltip not-bought" data-tooltip="Зменшити кількість товару">-</button>
                     <div>1</div>
-                    <button id="plus">+</button>
+                    <button class="plus tooltip not-bought" data-tooltip="Збільшити кількість товару">+</button>
                 </div>
                 <div class="col col3">
-                    <button id="unbought">Куплено</button>
-                    <button id="cross"></button>
+                    <button class="tooltip not-bought" data-tooltip="Додати до списку купленого">Куплено</button>
+                    <button class="tooltip cross not-bought" data-tooltip="Видалити з кошику">&#x00d7;</button>
                 </div>
             </div>
             <div class="prod">
@@ -86,11 +57,46 @@
                     <div>1</div>
                 </div>
                 <div class="col col3">
-                    <button id="bought">Не куплено</button>
+                    <button class="tooltip bought" data-tooltip="Видалити зі списку купленого">Не куплено</button>
                 </div>
             </div>
       </div>
     </div>
+    <div class="main right">
+        <div>
+          <h4>Залишилося</h4><hr>
+          <div class="list">
+              <div class="elem">
+                  <span>Сир</span>
+                  <div class="circle">101</div>
+              </div>
+              <div class="elem">
+                  <span>Помідор</span>
+                  <div class="circle">3</div>
+              </div>
+              <div class="elem">
+                  <span>Огірок</span>
+                  <div class="circle">1</div>
+              </div>
+          </div>
+        </div><hr class="bold-hr">
+        <div>
+          <h4>Куплено</h4><hr>
+          <div class="list">
+              <div class="elem bought">
+                  <span>Test</span>
+                  <div class="circle out">3</div>
+              </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="badge">
+    <h3>BuyList</h3>
+    <p>
+        <i>Created by:</i><br>
+        Oleksii Lozovoi
+    </p>
   </div>
 </body>
 </html>
