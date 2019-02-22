@@ -47,7 +47,7 @@ body {
 
 .main.left {
     height: 100%;
-    flex-grow: 20;
+    flex-grow: 5;
     margin: 10px;
 }
 
@@ -62,6 +62,8 @@ body {
 .main.right {
     margin: 10px;
     flex-grow: 1;
+    max-width: 25%;
+    height: 100%;
 }
 
 .list {
@@ -70,17 +72,25 @@ body {
     padding: 5px;
 }
 
+#to-buy-list, #bought-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
 .list .elem {
     display: inline-flex;
     align-items: baseline;
     border-radius: 3px;
     margin: 3px 0;
+    margin-left: 3px;
     padding: 5px;
     border: 1px solid #303373;
     font-size: 12px;
 }
 
-.list .bought span {
+.list.bought span {
     text-decoration-line: line-through;
 }
 
@@ -88,7 +98,6 @@ body {
     -webkit-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.75);
     -moz-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.75);
     box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.75);
-    cursor: pointer;
 }
 
 .circle {
@@ -204,7 +213,7 @@ body {
     box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.75);
 }
 
-.list .prod button.bought, .list .prod button.not-bought {
+.list .prod button {
     background-color: #D1BCD3;
     padding: 0 10px;
 }
@@ -225,10 +234,6 @@ body {
     height: 25px;
     background-color: red;
     padding: 0;
-}
-
-.list .prod div.bought {
-    text-decoration-line: line-through;
 }
 
 .badge {

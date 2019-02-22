@@ -4,18 +4,34 @@
     <meta charset="UTF-8">
     <title>My Page</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
-    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="main.css"/>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="buylist.js"></script>
 </head>
 <body>
-  <div class="container">
+<div class="container">
     <div class="main left">
-      <div class="search">
-          <input class="text-field" type="text" placeholder="Назва товару"/>
-          <button class="button tooltip" data-tooltip="Додати продукт до кошика">Купити</button>
-      </div><hr class="bold-hr">
-      <div class="list">
-            <div class="prod">
+        <div class="search">
+            <input id="prod-input-field" class="text-field" type="text" placeholder="Назва товару"/>
+            <button id="add-prod-button" class="button tooltip" data-tooltip="Додати продукт до кошика">Купити</button>
+        </div>
+        <hr class="bold-hr">
+        <div class="list" id="prod-list">
+            <div id="prod-template" class="prod" style="display: none">
+                <div class="col col1"></div>
+                <div class="col col2">
+                    <button id="plusminus" class="minus tooltip" data-tooltip="Зменшити кількість товару">-</button>
+                    <div>1</div>
+                    <button id="plusminus" class="plus tooltip" data-tooltip="Збільшити кількість товару">+</button>
+                </div>
+                <div class="col col3">
+                    <button id="unbuy" class="tooltip" data-tooltip="Видалити зі списку купленого" style="display: none">Не куплено</button>
+                    <button id="buy" class="tooltip" data-tooltip="Додати до списку купленого">Куплено</button>
+                    <button id="del" class="tooltip cross" data-tooltip="Видалити з кошику">&#x00d7;</button>
+                </div>
+            </div>
+            <!--<div class="prod">
                 <div class="col col1">Cир</div>
                 <div class="col col2">
                     <button class="minus tooltip not-bought" data-tooltip="Зменшити кількість товару">-</button>
@@ -59,44 +75,51 @@
                 <div class="col col3">
                     <button class="tooltip bought" data-tooltip="Видалити зі списку купленого">Не куплено</button>
                 </div>
-            </div>
-      </div>
+            </div>-->
+        </div>
     </div>
     <div class="main right">
         <div>
-          <h4>Залишилося</h4><hr>
-          <div class="list">
-              <div class="elem">
-                  <span>Сир</span>
-                  <div class="circle">101</div>
-              </div>
-              <div class="elem">
-                  <span>Помідор</span>
-                  <div class="circle">3</div>
-              </div>
-              <div class="elem">
-                  <span>Огірок</span>
-                  <div class="circle">1</div>
-              </div>
-          </div>
-        </div><hr class="bold-hr">
-        <div>
-          <h4>Куплено</h4><hr>
-          <div class="list">
-              <div class="elem bought">
-                  <span>Test</span>
-                  <div class="circle out">3</div>
-              </div>
-          </div>
+            <h4>Залишилося</h4>
+            <hr>
+            <div id="to-buy-list" class="list">
+                <div id="badge-template" class="elem" style="display: none">
+                    <span></span>
+                    <div class="circle">1</div>
+                </div>
+                <!--<div class="elem">
+                    <span>Сир</span>
+                    <div class="circle">101</div>
+                </div>
+                <div class="elem">
+                    <span>Помідор</span>
+                    <div class="circle">3</div>
+                </div>
+                <div class="elem">
+                    <span>Огірок</span>
+                    <div class="circle">1</div>
+                </div>-->
+            </div>
         </div>
-      </div>
-  </div>
-  <div class="badge">
+        <hr class="bold-hr">
+        <div>
+            <h4>Куплено</h4>
+            <hr>
+            <div id="bought-list" class="list bought">
+                <!--<div class="elem">
+                    <span>Test</span>
+                    <div class="circle out">3</div>
+                </div>-->
+            </div>
+        </div>
+    </div>
+</div>
+<div class="badge">
     <h3>BuyList</h3>
     <p>
         <i>Created by:</i><br>
         Oleksii Lozovoi
     </p>
-  </div>
+</div>
 </body>
 </html>
