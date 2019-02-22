@@ -6,8 +6,9 @@ $(function(){
     renderProduct('Test', 3, true);
 
     $('#add-prod-button').click(function () {
-        const prodName = $('#prod-input-field').val();
-        renderProduct(prodName);
+        const $prod = $('#prod-input-field');
+        renderProduct($prod.val());
+        $prod.val("");
     });
 });
 
